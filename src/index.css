@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* TEMA GELAP (DEFAULT) - Persis 100% dari HTML asli */
+:root {
+  --bg-dark: #121212;
+  --bg-panel: #222222;
+  --bg-hover: #333333;
+  --border: #3d3d3d;
+  --text-main: #eeeeee;
+  --text-muted: #999999;
+  --accent: #10b981;
+  --accent-hover: #059669;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --canvas-bg: #1a1a1a;
+  --tooltip-bg: #000000;
+  --tooltip-text: #ffffff;
+}
+
+/* TEMA TERANG (LIGHT MODE) - Persis 100% dari HTML asli */
+html.theme-light {
+  --bg-dark: #f3f4f6;
+  --bg-panel: #ffffff;
+  --bg-hover: #e5e7eb;
+  --border: #d1d5db;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --accent: #10b981;
+  --accent-hover: #059669;
+  --canvas-bg: #e5e7eb;
+  --tooltip-bg: #1f2937;
+  --tooltip-text: #ffffff;
+}
+
+/* 
+  FIX 100% ZERO TOLERANCE: 
+  Memaksa semua class background & warna text Tailwind mengikuti CSS Variable aslimu saat Light Mode aktif.
+*/
+html.theme-light body,
+html.theme-light .bg-neutral-950 {
+  background-color: var(--bg-dark) !important;
+  color: var(--text-main) !important;
+}
+
+html.theme-light .bg-neutral-900,
+html.theme-light .bg-neutral-800 {
+  background-color: var(--bg-panel) !important;
+}
+
+html.theme-light .hover\:bg-neutral-700:hover {
+  background-color: var(--bg-hover) !important;
+}
+
+html.theme-light .border-neutral-800,
+html.theme-light .border-neutral-700,
+html.theme-light .border-b,
+html.theme-light .border-l,
+html.theme-light .border-r,
+html.theme-light .border {
+  border-color: var(--border) !important;
+}
+
+html.theme-light .text-neutral-100,
+html.theme-light .text-white {
+  color: var(--text-main) !important;
+}
+
+html.theme-light .text-neutral-400,
+html.theme-light .text-neutral-500 {
+  color: var(--text-muted) !important;
+}
+
+html.theme-light main.bg-\[\#1a1a1a\],
+html.theme-light .bg-\[\#111\] {
+  background-color: var(--canvas-bg) !important;
+}
